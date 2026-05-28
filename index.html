@@ -33,11 +33,45 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 id="eventModalTitle">Add Event</h2>
-            <input type="text" id="eventInput" placeholder="Enter event name..." maxlength="50">
+            
+            <div class="form-group">
+                <label for="eventInput">Event Name:</label>
+                <input type="text" id="eventInput" placeholder="Enter event name..." maxlength="50">
+            </div>
+
+            <div class="form-group">
+                <label for="eventTime">Time:</label>
+                <input type="time" id="eventTime">
+            </div>
+
+            <div class="form-group">
+                <label for="eventColor">Color:</label>
+                <div class="color-picker">
+                    <input type="radio" id="color-red" name="event-color" value="red" checked>
+                    <label for="color-red" class="color-option color-red" title="Red"></label>
+                    
+                    <input type="radio" id="color-blue" name="event-color" value="blue">
+                    <label for="color-blue" class="color-option color-blue" title="Blue"></label>
+                    
+                    <input type="radio" id="color-green" name="event-color" value="green">
+                    <label for="color-green" class="color-option color-green" title="Green"></label>
+                    
+                    <input type="radio" id="color-purple" name="event-color" value="purple">
+                    <label for="color-purple" class="color-option color-purple" title="Purple"></label>
+                    
+                    <input type="radio" id="color-yellow" name="event-color" value="yellow">
+                    <label for="color-yellow" class="color-option color-yellow" title="Yellow"></label>
+                    
+                    <input type="radio" id="color-pink" name="event-color" value="pink">
+                    <label for="color-pink" class="color-option color-pink" title="Pink"></label>
+                </div>
+            </div>
+
             <div class="modal-buttons">
                 <button id="addEventBtn" class="btn btn-add">Add Event</button>
                 <button id="cancelEventBtn" class="btn btn-cancel">Cancel</button>
             </div>
+            
             <div id="eventsList" class="events-list"></div>
         </div>
     </div>
