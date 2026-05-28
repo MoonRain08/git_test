@@ -20,6 +20,7 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const eventModal = document.getElementById('eventModal');
 const eventInput = document.getElementById('eventInput');
+const eventTime = document.getElementById('eventTime');
 const addEventBtn = document.getElementById('addEventBtn');
 const cancelEventBtn = document.getElementById('cancelEventBtn');
 const closeBtn = document.querySelector('.close');
@@ -35,6 +36,10 @@ const months = [
 
 function getDateKey(year, month, day) {
     return `${year}-${month}-${day}`;
+}
+
+function getSelectedColor() {
+    return document.querySelector('input[name="event-color"]:checked').value;
 }
 
 function renderCalendar() {
@@ -111,6 +116,8 @@ function openEventModal(day) {
     const dateStr = `${months[month]} ${day}, ${year}`;
     eventModalTitle.textContent = `✨ Events for ${dateStr} ✨`;
     eventInput.value = '';
+    eventTime.value = '';
+    document.getElementById('color-red').checked = true;
     displayEvents();
     eventModal.style.display = 'block';
 }
@@ -125,9 +132,15 @@ function displayEvents() {
     if (selectedDate && events[selectedDate]) {
         events[selectedDate].forEach((event, index) => {
             const eventItem = document.createElement('div');
-            eventItem.className = 'event-item';
+            eventItem.className = `event-item ${event.color}`;
+            
+            const timeDisplay = event.time ? `<span class="event-time">${event.time}</span>` : '';
+            
             eventItem.innerHTML = `
-                <div class="event-item-text">🎀 ${event}</div>
+                <div class="event-item-text">
+                    🎀 ${event.name}
+                    ${timeDisplay}
+                </div>
                 <button class="event-delete" onclick="deleteEvent(${index})">✕</button>
             `;
             eventsList.appendChild(eventItem);
@@ -144,12 +157,22 @@ function addEvent() {
         return;
     }
 
+    const color = getSelectedColor();
+    const time = eventTime.value || 'No time set';
+
     if (!events[selectedDate]) {
         events[selectedDate] = [];
     }
-    events[selectedDate].push(eventText);
+    
+    events[selectedDate].push({
+        name: eventText,
+        time: eventTime.value,
+        color: color
+    });
+    
     saveEvents();
     eventInput.value = '';
+    eventTime.value = '';
     displayEvents();
     renderCalendar();
 }
