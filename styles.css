@@ -149,14 +149,15 @@ body {
 }
 
 .modal-content {
-    background-color: white;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
     margin: 5% auto;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     width: 90%;
     max-width: 400px;
     position: relative;
+    border: 3px dashed #FF8A80;
 }
 
 .close {
@@ -176,24 +177,33 @@ body {
 
 .modal-content h2 {
     margin-bottom: 20px;
-    color: #333;
-    font-size: 20px;
+    color: #d65a5a;
+    font-size: 22px;
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+    text-align: center;
+    font-weight: bold;
 }
 
 #eventInput {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    border: 2px solid #FF8A80;
+    border-radius: 15px;
     font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
     transition: border-color 0.3s ease;
+    background: white;
 }
 
 #eventInput:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #FF6B6B;
+    background: #fffaf9;
+}
+
+#eventInput::placeholder {
+    color: #ffb3a7;
 }
 
 .modal-buttons {
@@ -205,68 +215,91 @@ body {
 .btn {
     flex: 1;
     padding: 12px;
-    border: none;
-    border-radius: 8px;
+    border: 2px solid transparent;
+    border-radius: 12px;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
     transition: all 0.3s ease;
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-add {
-    background: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    border: 2px solid #667eea;
 }
 
 .btn-add:hover {
-    background: #764ba2;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 .btn-cancel {
-    background: #f0f0f0;
-    color: #333;
+    background: white;
+    color: #d65a5a;
+    border: 2px solid #FF8A80;
 }
 
 .btn-cancel:hover {
-    background: #e0e0e0;
+    background: #fff5f5;
+    border-color: #FF6B6B;
+    transform: scale(1.05);
 }
 
 .events-list {
     margin-top: 20px;
     max-height: 200px;
     overflow-y: auto;
+    padding: 10px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #FFE0B2;
 }
 
 .event-item {
-    background: #f9f9f9;
+    background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%);
     padding: 12px;
     margin-bottom: 10px;
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid #FF6B6B;
+    border-left: 5px solid #FF8A80;
+    border: 2px dashed #FFB74D;
 }
 
 .event-item-text {
     flex: 1;
-    color: #333;
+    color: #6d4c41;
     font-size: 14px;
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+    font-weight: 600;
 }
 
 .event-delete {
-    background: #FF6B6B;
+    background: linear-gradient(135deg, #FF8A80 0%, #FF6B6B 100%);
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 6px 12px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 12px;
-    transition: background 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .event-delete:hover {
-    background: #FF5252;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+    transform: scale(1.1);
 }
 
 @media (max-width: 480px) {
