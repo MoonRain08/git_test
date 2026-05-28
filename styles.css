@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calendar-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.calendar-header h1 {
+    font-size: 24px;
+    color: #333;
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+}
+
+.nav-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #764ba2;
+}
+
+.calendar {
+    width: 100%;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: 600;
+    color: #667eea;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    background: #f5f5f5;
+    color: #333;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.day:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.day.other-month {
+    color: #ccc;
+    background: transparent;
+    cursor: default;
+}
+
+.day.other-month:hover {
+    background: transparent;
+    transform: scale(1);
+}
+
+.day.today {
+    background: #667eea;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.day.today:hover {
+    background: #764ba2;
+    transform: scale(1.08);
+}
+
+@media (max-width: 480px) {
+    .calendar-container {
+        padding: 20px;
+    }
+
+    .calendar-header {
+        flex-wrap: wrap;
+    }
+
+    .calendar-header h1 {
+        font-size: 20px;
+        width: 100%;
+        order: 3;
+    }
+
+    .nav-btn {
+        flex: 1;
+    }
+}
