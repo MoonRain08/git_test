@@ -187,16 +187,18 @@ body {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     color: #6d4c41;
     font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 #eventInput,
@@ -225,8 +227,9 @@ body {
 /* Color Picker Styles */
 .color-picker {
     display: flex;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .color-picker input[type="radio"] {
@@ -281,6 +284,7 @@ body {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    margin-top: 25px;
 }
 
 .btn {
@@ -322,7 +326,7 @@ body {
 }
 
 .events-list {
-    margin-top: 20px;
+    margin-top: 25px;
     max-height: 200px;
     overflow-y: auto;
     padding: 10px;
@@ -442,5 +446,9 @@ body {
     .color-option {
         width: 35px;
         height: 35px;
+    }
+
+    .form-group label {
+        font-size: 14px;
     }
 }
