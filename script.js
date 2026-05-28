@@ -109,7 +109,7 @@ function openEventModal(day) {
     selectedDate = getDateKey(year, month, day);
     
     const dateStr = `${months[month]} ${day}, ${year}`;
-    eventModalTitle.textContent = `Events for ${dateStr}`;
+    eventModalTitle.textContent = `✨ Events for ${dateStr} ✨`;
     eventInput.value = '';
     displayEvents();
     eventModal.style.display = 'block';
@@ -127,13 +127,13 @@ function displayEvents() {
             const eventItem = document.createElement('div');
             eventItem.className = 'event-item';
             eventItem.innerHTML = `
-                <div class="event-item-text">${event}</div>
-                <button class="event-delete" onclick="deleteEvent(${index})">Delete</button>
+                <div class="event-item-text">🎀 ${event}</div>
+                <button class="event-delete" onclick="deleteEvent(${index})">✕</button>
             `;
             eventsList.appendChild(eventItem);
         });
     } else {
-        eventsList.innerHTML = '<p style="color: #999; text-align: center;">No events yet</p>';
+        eventsList.innerHTML = '<p style="color: #999; text-align: center;">No events yet ✨</p>';
     }
 }
 
