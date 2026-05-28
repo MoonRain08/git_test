@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calendar</title>
+    <title>Simple Calendar with Events</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,6 +25,20 @@
                 <div class="weekday">Sat</div>
             </div>
             <div class="days" id="calendarDays"></div>
+        </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="eventModalTitle">Add Event</h2>
+            <input type="text" id="eventInput" placeholder="Enter event name..." maxlength="50">
+            <div class="modal-buttons">
+                <button id="addEventBtn" class="btn btn-add">Add Event</button>
+                <button id="cancelEventBtn" class="btn btn-cancel">Cancel</button>
+            </div>
+            <div id="eventsList" class="events-list"></div>
         </div>
     </div>
 
